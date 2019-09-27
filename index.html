@@ -1,0 +1,176 @@
+<!DOCTYPE HTML>
+<!--
+	Eventually by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Codex Route Plotter</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<script src="pretty-print-json.js"></script>
+		<link href="css/pretty-print-json.css" type="text/css" rel="stylesheet" />
+        <link href="https://unpkg.com/tabulator-tables@4.3.0/dist/css/tabulator_midnight.min.css" rel="stylesheet">
+        <script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.3.0/dist/js/tabulator.min.js"></script>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<h1>System Signals</h1>
+				<p>Enter a system name to view signals recorded by Canonn field researchers</p>
+			</header>
+
+		<!-- Signup Form -->
+		<script>
+			/**
+			 * Get the URL parameters
+			 * source: https://css-tricks.com/snippets/javascript/get-url-variables/
+			 * @param  {String} url The URL
+			 * @return {Object}     The URL parameters
+			 */
+			var getParams = function (url) {
+				var params = {};
+				var parser = document.createElement('a');
+				parser.href = url;
+				var query = parser.search.substring(1);
+				var vars = query.split('&');
+				for (var i = 0; i < vars.length; i++) {
+					var pair = vars[i].split('=');
+					params[pair[0]] = decodeURIComponent(pair[1]);
+				}
+				return params;
+			};
+            
+			var params=getParams(window.location.href);
+            
+			$( document ).ready(function() {
+				if ( params.system) {
+				  //$(#form).submitForm();
+				  
+				  
+				  var system=decodeURIComponent(params.system).replace(/\+/g," ")
+				  				  
+				  doDisplay(system);
+				  
+				  $("#system").val(system);
+				  
+				}
+			   
+			});
+
+           
+            
+			function updateSignals(json){
+				console.log(json);
+                var table = new Tabulator("#results-table", {
+                        data:json.signals,           //load row data from array
+                        layout:"fitColumns",      //fit columns to width of table
+                        responsiveLayout:"hide",  //hide columns that dont fit on the table
+                        tooltips:true,            //show tool tips on cells
+                        addRowPos:"top",          //when adding a new row, add it to the top of the table
+                        pagination:"local",       //paginate the data
+                        paginationSize:50,         //allow 7 rows per page of data
+                        movableColumns:true,      //allow column order to be changed
+                        resizableRows:true,       //allow row order to be changed
+                        
+                        columns:[                 //define the table columns
+                            
+							{title:"Body", field:"body", headerFilter:true},
+							{title:"Signal Type", field:"type", headerFilter:true},
+							{title:"Signal Count", field:"count", headerFilter:true},                        
+                        ],
+                    });            
+			}
+            function updateEntries(json){
+				console.log(json);
+				console.log(json);
+                var table = new Tabulator("#entries-table", {
+                        data:json.signals,           //load row data from array
+                        layout:"fitColumns",      //fit columns to width of table
+                        responsiveLayout:"hide",  //hide columns that dont fit on the table
+                        tooltips:true,            //show tool tips on cells
+                        addRowPos:"top",          //when adding a new row, add it to the top of the table
+                        pagination:"local",       //paginate the data
+                        paginationSize:50,         //allow 7 rows per page of data
+                        movableColumns:true,      //allow column order to be changed
+                        resizableRows:true,       //allow row order to be changed
+                        
+                        columns:[                 //define the table columns
+                            
+							{title:"Body", field:"body", headerFilter:true},
+                            {title:"Signal#", field:"id", headerFilter:true},
+							{title:"Category", field:"hud_category", headerFilter:true},
+							{title:"Species", field:"english_name", headerFilter:true},                        
+                        ],       
+                                
+                    });            
+			}            
+            
+            function doDisplay(system){
+                getSignalEntries(system)
+                getSignals(system)
+            }
+            
+			function getSignalEntries(system){
+				$("#result").text("Searching")
+				
+				fetch(encodeURI('https://us-central1-canonn-api-236217.cloudfunctions.net/getSignalEntries?system='+system))
+				.then(response => response.json())
+                .then(json => updateEntries(json))
+			;
+			}            
+			function getSignals(system){
+				$("#result").text("Searching")
+				
+				fetch(encodeURI('https://us-central1-canonn-api-236217.cloudfunctions.net/getSignals?system='+system))
+				.then(response => response.json())
+				.then(json => updateSignals(json))
+			;
+			}
+			function submitform(){
+				var data = $(this).serializeArray();
+				doDecode($('input:text').val(),$("#data").val());
+				return false;
+			};
+			</script>
+			   <form id="form" method="GET">
+               <div id="search-container">
+					<input type="text" placeholder="System Name eg. Merope" name="system" id="system" >
+				</div>
+				<input type="submit"> 
+				</form>
+            <p>
+            <div id="results-table">&nbsp;</div>
+            </p>
+            <p>
+             <div id="entries-table">&nbsp;</div>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            </P>
+			
+				</div><!-- /.container -->
+		<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="http://twitter.com/CanonnResearch" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="https://github.com/canonn-science/Aurvandil/blob/master/README.md" class="icon brands fa-github"><span class="label">GitHub</span></a></li>				
+				</ul>
+				<ul class="copyright">
+					<li>&copy; Canonn Interstellar Research.</li><li>Credits: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
