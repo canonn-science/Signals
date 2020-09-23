@@ -162,7 +162,8 @@
 		<p class="highcharts-description">
 			This chart shows the range of gravity and temperature of each of the different classes of biology,
 			represented by rectangles.
-			There are seperate ranges for each body type therefore some biology classes will have different
+			There are seperate ranges for each body type therefore some biology classes will have multiple rectangles
+			one fo reach body type.
 		</p>
 	</figure>
 	<script>
@@ -175,7 +176,7 @@
 				text: 'Gravity Vs Temperature Ranges for Biological Signals'
 			},
 			subtitle: {
-				text: 'System: XXXX XX-X x0-0'
+				text: "System: Struve's Lost Sector GW-W d1-20"
 			},
 			xAxis: {
 				title: {
@@ -227,78 +228,198 @@
 		{"ming": 0.04557216926, "maxg": 0.2123876965, "mint": 90, "maxt": 247,"volcanism": True},
 			*/
 			series: [
-				{ name: 'Amphora Plant (Metal-rich body)', type: 'polygon', data: [[1000.0, 0.04], [1672.0, 0.04], [1672.0, 2.89], [1000.0, 2.89]], showInLegend: false, marker: { enabled: false }, color: 'red', opacity: 0.5 },
-				{ name: 'Luteolum Anemone (Rocky body)', type: 'polygon', data: [[201.0, 0.04], [438.0, 0.04], [438.0, 1.28], [201.0, 1.28]], showInLegend: false, marker: { enabled: false }, color: 'orange', opacity: 0.5 },
-				{ name: 'Roseum Bioluminescent Anemone (Metal-rich body)', type: 'polygon', data: [[1001.0, 0.04], [4527.0, 0.04], [4527.0, 4.51], [1001.0, 4.51]], showInLegend: false, marker: { enabled: false }, color: 'orange', opacity: 0.5 },
-				{ name: 'Roseum Anemone (Rocky body)', type: 'polygon', data: [[274.0, 0.05], [433.0, 0.05], [433.0, 0.32], [274.0, 0.32]], showInLegend: false, marker: { enabled: false }, color: 'orange', opacity: 0.5 },
-				{ name: 'Roseum Bioluminescent Anemone (High metal content world)', type: 'polygon', data: [[446.0, 0.24], [998.0, 0.24], [998.0, 4.53], [446.0, 4.53]], showInLegend: false, marker: { enabled: false }, color: 'orange', opacity: 0.5 },
-				{ name: 'Blatteum Bioluminescent Anemone (Metal-rich body)', type: 'polygon', data: [[1002.0, 0.05], [2523.0, 0.05], [2523.0, 4.24], [1002.0, 4.24]], showInLegend: false, marker: { enabled: false }, color: 'orange', opacity: 0.5 },
-				{ name: 'Prasinum Bioluminescent Anemone (High metal content world)', type: 'polygon', data: [[472.0, 0.62], [2026.0, 0.62], [2026.0, 9.9], [472.0, 9.9]], showInLegend: false, marker: { enabled: false }, color: 'orange', opacity: 0.5 },
-				{ name: 'Prasinum Bioluminescent Anemone (Rocky body)', type: 'polygon', data: [[111.0, 0.04], [998.0, 0.04], [998.0, 1.84], [111.0, 1.84]], showInLegend: false, marker: { enabled: false }, color: 'orange', opacity: 0.5 },
 				{ name: 'Prasinum Bioluminescent Anemone (Metal-rich body)', type: 'polygon', data: [[1009.0, 0.03], [3042.0, 0.03], [3042.0, 11.01], [1009.0, 11.01]], showInLegend: false, marker: { enabled: false }, color: 'orange', opacity: 0.5 },
-				{ name: 'Puniceum Anemone (Icy body)', type: 'polygon', data: [[75.0, 0.17], [679.0, 0.17], [679.0, 2.3], [75.0, 2.3]], showInLegend: false, marker: { enabled: false }, color: 'orange', opacity: 0.5 },
+				{ name: 'Roseum Bioluminescent Anemone (Metal-rich body)', type: 'polygon', data: [[1001.0, 0.04], [4527.0, 0.04], [4527.0, 4.51], [1001.0, 4.51]], showInLegend: false, marker: { enabled: false }, color: 'orange', opacity: 0.5 },
+				{ name: 'Prasinum Bioluminescent Anemone (High metal content world)', type: 'polygon', data: [[472.0, 0.62], [2026.0, 0.62], [2026.0, 9.9], [472.0, 9.9]], showInLegend: false, marker: { enabled: false }, color: 'orange', opacity: 0.5 },
 				{ name: 'Blatteum Bioluminescent Anemone (High metal content world)', type: 'polygon', data: [[230.0, 0.13], [997.0, 0.13], [997.0, 8.73], [230.0, 8.73]], showInLegend: false, marker: { enabled: false }, color: 'orange', opacity: 0.5 },
-				{ name: 'Croceum Anemone (Rocky body)', type: 'polygon', data: [[213.0, 0.04], [439.0, 0.04], [439.0, 0.31], [213.0, 0.31]], showInLegend: false, marker: { enabled: false }, color: 'orange', opacity: 0.5 },
-				{ name: 'Rubeum Bioluminescent Anemone (Metal-rich body)', type: 'polygon', data: [[1001.0, 0.03], [1782.0, 0.03], [1782.0, 3.83], [1001.0, 3.83]], showInLegend: false, marker: { enabled: false }, color: 'orange', opacity: 0.5 },
+				{ name: 'Blatteum Bioluminescent Anemone (Metal-rich body)', type: 'polygon', data: [[1002.0, 0.05], [2523.0, 0.05], [2523.0, 4.24], [1002.0, 4.24]], showInLegend: false, marker: { enabled: false }, color: 'orange', opacity: 0.5 },
 				{ name: 'Rubeum Bioluminescent Anemone (High metal content world)', type: 'polygon', data: [[164.0, 0.04], [998.0, 0.04], [998.0, 3.75], [164.0, 3.75]], showInLegend: false, marker: { enabled: false }, color: 'orange', opacity: 0.5 },
-				{ name: 'Roseum Sinuous Tubers (Rocky body)', type: 'polygon', data: [[200.0, 0.04], [497.0, 0.04], [497.0, 0.27], [200.0, 0.27]], showInLegend: false, marker: { enabled: false }, color: 'purple', opacity: 0.5 },
+				{ name: 'Rubeum Bioluminescent Anemone (Metal-rich body)', type: 'polygon', data: [[1001.0, 0.03], [1782.0, 0.03], [1782.0, 3.83], [1001.0, 3.83]], showInLegend: false, marker: { enabled: false }, color: 'orange', opacity: 0.5 },
+				{ name: 'Puniceum Brain Tree (High metal content world)', type: 'polygon', data: [[129.0, 0.05], [998.0, 0.05], [998.0, 3.46], [129.0, 3.46]], showInLegend: false, marker: { enabled: false }, color: 'blue', opacity: 0.5 },
+				{ name: 'Roseum Bioluminescent Anemone (High metal content world)', type: 'polygon', data: [[446.0, 0.24], [998.0, 0.24], [998.0, 4.53], [446.0, 4.53]], showInLegend: false, marker: { enabled: false }, color: 'orange', opacity: 0.5 },
+				{ name: 'Amphora Plant (Metal-rich body)', type: 'polygon', data: [[1000.0, 0.04], [1672.0, 0.04], [1672.0, 2.89], [1000.0, 2.89]], showInLegend: false, marker: { enabled: false }, color: 'red', opacity: 0.5 },
+				{ name: 'Ostrinum Brain Tree (Metal-rich body)', type: 'polygon', data: [[1000.0, 0.05], [1794.0, 0.05], [1794.0, 2.12], [1000.0, 2.12]], showInLegend: false, marker: { enabled: false }, color: 'blue', opacity: 0.5 },
+				{ name: 'Prasinum Bioluminescent Anemone (Rocky body)', type: 'polygon', data: [[111.0, 0.04], [998.0, 0.04], [998.0, 1.84], [111.0, 1.84]], showInLegend: false, marker: { enabled: false }, color: 'orange', opacity: 0.5 },
+				{ name: 'Puniceum Brain Tree (Metal-rich body)', type: 'polygon', data: [[1004.0, 0.05], [1733.0, 0.05], [1733.0, 1.9], [1004.0, 1.9]], showInLegend: false, marker: { enabled: false }, color: 'blue', opacity: 0.5 },
+				{ name: 'Puniceum Anemone (Icy body)', type: 'polygon', data: [[75.0, 0.17], [679.0, 0.17], [679.0, 2.3], [75.0, 2.3]], showInLegend: false, marker: { enabled: false }, color: 'orange', opacity: 0.5 },
+				{ name: 'Ostrinum Brain Tree (High metal content world)', type: 'polygon', data: [[204.0, 0.04], [997.0, 0.04], [997.0, 1.64], [204.0, 1.64]], showInLegend: false, marker: { enabled: false }, color: 'blue', opacity: 0.5 },
 				{ name: 'Roseum Sinuous Tubers (High metal content world)', type: 'polygon', data: [[201.0, 0.06], [499.0, 0.06], [499.0, 3.01], [201.0, 3.01]], showInLegend: false, marker: { enabled: false }, color: 'purple', opacity: 0.5 },
-				{ name: 'Albidum Sinuous Tubers (Rocky body)', type: 'polygon', data: [[206.0, 0.04], [424.0, 0.04], [424.0, 0.22], [206.0, 0.22]], showInLegend: false, marker: { enabled: false }, color: 'purple', opacity: 0.5 },
-				{ name: 'Prasinum Sinuous Tubers (Rocky body)', type: 'polygon', data: [[208.0, 0.04], [488.0, 0.04], [488.0, 0.22], [208.0, 0.22]], showInLegend: false, marker: { enabled: false }, color: 'purple', opacity: 0.5 },
+				{ name: 'Roseum Brain Tree (High metal content world)', type: 'polygon', data: [[201.0, 0.03], [498.0, 0.03], [498.0, 2.97], [201.0, 2.97]], showInLegend: false, marker: { enabled: false }, color: 'blue', opacity: 0.5 },
+				{ name: 'Prasinum Sinuous Tubers (High metal content world)', type: 'polygon', data: [[229.0, 0.07], [491.0, 0.07], [491.0, 2.62], [229.0, 2.62]], showInLegend: false, marker: { enabled: false }, color: 'purple', opacity: 0.5 },
+				{ name: 'Bark Mound (High metal content world)', type: 'polygon', data: [[200.0, 0.03], [439.0, 0.03], [439.0, 2.71], [200.0, 2.71]], showInLegend: false, marker: { enabled: false }, color: 'brown', opacity: 0.5 },
+				{ name: 'Albidum Sinuous Tubers (High metal content world)', type: 'polygon', data: [[201.0, 0.05], [487.0, 0.05], [487.0, 2.13], [201.0, 2.13]], showInLegend: false, marker: { enabled: false }, color: 'purple', opacity: 0.5 },
+				{ name: 'Bark Mound (Icy body)', type: 'polygon', data: [[200.0, 0.02], [431.0, 0.02], [431.0, 2.29], [200.0, 2.29]], showInLegend: false, marker: { enabled: false }, color: 'brown', opacity: 0.5 },
+				{ name: 'Blatteum Sinuous Tubers (High metal content world)', type: 'polygon', data: [[219.0, 0.08], [491.0, 0.08], [491.0, 1.62], [219.0, 1.62]], showInLegend: false, marker: { enabled: false }, color: 'purple', opacity: 0.5 },
 				{ name: 'Violaceum Sinuous Tubers (High metal content world)', type: 'polygon', data: [[219.0, 0.09], [491.0, 0.09], [491.0, 1.62], [219.0, 1.62]], showInLegend: false, marker: { enabled: false }, color: 'purple', opacity: 0.5 },
 				{ name: 'Viride Sinuous Tubers (High metal content world)', type: 'polygon', data: [[219.0, 0.09], [491.0, 0.09], [491.0, 1.6], [219.0, 1.6]], showInLegend: false, marker: { enabled: false }, color: 'purple', opacity: 0.5 },
-				{ name: 'Blatteum Sinuous Tubers (Rocky body)', type: 'polygon', data: [[205.0, 0.04], [473.0, 0.04], [473.0, 0.49], [205.0, 0.49]], showInLegend: false, marker: { enabled: false }, color: 'purple', opacity: 0.5 },
-				{ name: 'Violaceum Sinuous Tubers (Rocky body)', type: 'polygon', data: [[203.0, 0.04], [490.0, 0.04], [490.0, 0.49], [203.0, 0.49]], showInLegend: false, marker: { enabled: false }, color: 'purple', opacity: 0.5 },
-				{ name: 'Prasinum Sinuous Tubers (High metal content world)', type: 'polygon', data: [[229.0, 0.07], [491.0, 0.07], [491.0, 2.62], [229.0, 2.62]], showInLegend: false, marker: { enabled: false }, color: 'purple', opacity: 0.5 },
-				{ name: 'Lindigoticum Sinuous Tubers (Rocky body)', type: 'polygon', data: [[209.0, 0.04], [490.0, 0.04], [490.0, 0.49], [209.0, 0.49]], showInLegend: false, marker: { enabled: false }, color: 'purple', opacity: 0.5 },
-				{ name: 'Viride Sinuous Tubers (Rocky body)', type: 'polygon', data: [[327.0, 0.08], [429.0, 0.08], [429.0, 0.14], [327.0, 0.14]], showInLegend: false, marker: { enabled: false }, color: 'purple', opacity: 0.5 },
-				{ name: 'Blatteum Sinuous Tubers (High metal content world)', type: 'polygon', data: [[219.0, 0.08], [491.0, 0.08], [491.0, 1.62], [219.0, 1.62]], showInLegend: false, marker: { enabled: false }, color: 'purple', opacity: 0.5 },
-				{ name: 'Albidum Sinuous Tubers (High metal content world)', type: 'polygon', data: [[201.0, 0.05], [487.0, 0.05], [487.0, 2.13], [201.0, 2.13]], showInLegend: false, marker: { enabled: false }, color: 'purple', opacity: 0.5 },
-				{ name: 'Lindigoticum Sinuous Tubers (High metal content world)', type: 'polygon', data: [[219.0, 0.08], [491.0, 0.08], [491.0, 0.41], [219.0, 0.41]], showInLegend: false, marker: { enabled: false }, color: 'purple', opacity: 0.5 },
-				{ name: 'Roseum Brain Tree (High metal content world)', type: 'polygon', data: [[201.0, 0.03], [498.0, 0.03], [498.0, 2.97], [201.0, 2.97]], showInLegend: false, marker: { enabled: false }, color: 'blue', opacity: 0.5 },
-				{ name: 'Roseum Brain Tree (Rocky body)', type: 'polygon', data: [[200.0, 0.04], [499.0, 0.04], [499.0, 0.42], [200.0, 0.42]], showInLegend: false, marker: { enabled: false }, color: 'blue', opacity: 0.5 },
-				{ name: 'Roseum Brain Tree (Icy body)', type: 'polygon', data: [[200.0, 0.03], [247.0, 0.03], [247.0, 0.26], [200.0, 0.26]], showInLegend: false, marker: { enabled: false }, color: 'blue', opacity: 0.5 },
-				{ name: 'Ostrinum Brain Tree (High metal content world)', type: 'polygon', data: [[204.0, 0.04], [997.0, 0.04], [997.0, 1.64], [204.0, 1.64]], showInLegend: false, marker: { enabled: false }, color: 'blue', opacity: 0.5 },
-				{ name: 'Lividum Brain Tree (Rocky body)', type: 'polygon', data: [[300.0, 0.04], [496.0, 0.04], [496.0, 0.42], [300.0, 0.42]], showInLegend: false, marker: { enabled: false }, color: 'blue', opacity: 0.5 },
-				{ name: 'Puniceum Brain Tree (High metal content world)', type: 'polygon', data: [[129.0, 0.05], [998.0, 0.05], [998.0, 3.46], [129.0, 3.46]], showInLegend: false, marker: { enabled: false }, color: 'blue', opacity: 0.5 },
-				{ name: 'Puniceum Brain Tree (Metal-rich body)', type: 'polygon', data: [[1004.0, 0.05], [1733.0, 0.05], [1733.0, 1.9], [1004.0, 1.9]], showInLegend: false, marker: { enabled: false }, color: 'blue', opacity: 0.5 },
-				{ name: 'Gypseeum Brain Tree (Rocky body)', type: 'polygon', data: [[200.0, 0.04], [329.0, 0.04], [329.0, 0.29], [200.0, 0.29]], showInLegend: false, marker: { enabled: false }, color: 'blue', opacity: 0.5 },
-				{ name: 'Aureum Brain Tree (Rocky body)', type: 'polygon', data: [[303.0, 0.04], [486.0, 0.04], [486.0, 0.46], [303.0, 0.46]], showInLegend: false, marker: { enabled: false }, color: 'blue', opacity: 0.5 },
-				{ name: 'Lindigoticum Brain Tree (Rocky body)', type: 'polygon', data: [[370.0, 0.05], [499.0, 0.05], [499.0, 0.13], [370.0, 0.13]], showInLegend: false, marker: { enabled: false }, color: 'blue', opacity: 0.5 },
-				{ name: 'Viride Brain Tree (Rocky Ice world)', type: 'polygon', data: [[100.0, 0.04], [242.0, 0.04], [242.0, 0.39], [100.0, 0.39]], showInLegend: false, marker: { enabled: false }, color: 'blue', opacity: 0.5 },
-				{ name: 'Ostrinum Brain Tree (Metal-rich body)', type: 'polygon', data: [[1000.0, 0.05], [1794.0, 0.05], [1794.0, 2.12], [1000.0, 2.12]], showInLegend: false, marker: { enabled: false }, color: 'blue', opacity: 0.5 },
 				{ name: 'Aureum Brain Tree (High metal content world)', type: 'polygon', data: [[355.0, 0.06], [491.0, 0.06], [491.0, 2.28], [355.0, 2.28]], showInLegend: false, marker: { enabled: false }, color: 'blue', opacity: 0.5 },
+				{ name: 'Luteolum Anemone (Rocky body)', type: 'polygon', data: [[201.0, 0.04], [438.0, 0.04], [438.0, 1.28], [201.0, 1.28]], showInLegend: false, marker: { enabled: false }, color: 'orange', opacity: 0.5 },
 				{ name: 'Lindigoticum Brain Tree (High metal content world)', type: 'polygon', data: [[355.0, 0.2], [478.0, 0.2], [478.0, 2.28], [355.0, 2.28]], showInLegend: false, marker: { enabled: false }, color: 'blue', opacity: 0.5 },
-				{ name: 'Roseum Brain Tree (Rocky Ice world)', type: 'polygon', data: [[200.0, 0.08], [242.0, 0.08], [242.0, 0.26], [200.0, 0.26]], showInLegend: false, marker: { enabled: false }, color: 'blue', opacity: 0.5 },
-				{ name: 'Bark Mound (Rocky body)', type: 'polygon', data: [[184.0, 0.02], [439.0, 0.02], [439.0, 0.46], [184.0, 0.46]], showInLegend: false, marker: { enabled: false }, color: 'brown', opacity: 0.5 },
-				{ name: 'Bark Mound (High metal content world)', type: 'polygon', data: [[200.0, 0.03], [439.0, 0.03], [439.0, 2.71], [200.0, 2.71]], showInLegend: false, marker: { enabled: false }, color: 'brown', opacity: 0.5 },
-				{ name: 'Bark Mound (Metal-rich body)', type: 'polygon', data: [[1712.0, 3.17], [1712.0, 3.17], [1712.0, 3.18], [1712.0, 3.18]], showInLegend: false, marker: { enabled: false }, color: 'brown', opacity: 0.5 },
 				{ name: 'Bark Mound (Rocky Ice world)', type: 'polygon', data: [[200.0, 0.04], [325.0, 0.04], [325.0, 1.77], [200.0, 1.77]], showInLegend: false, marker: { enabled: false }, color: 'brown', opacity: 0.5 },
-				{ name: 'Bark Mound (Icy body)', type: 'polygon', data: [[200.0, 0.02], [431.0, 0.02], [431.0, 2.29], [200.0, 2.29]], showInLegend: false, marker: { enabled: false }, color: 'brown', opacity: 0.5 },
-				{ name: 'Crystalline Shards (Icy body)', type: 'polygon', data: [[27.0, 0.02], [133.0, 0.02], [133.0, 0.19], [27.0, 0.19]], showInLegend: false, marker: { enabled: false }, color: 'green', opacity: 0.5 },
-				{ name: 'Crystalline Shards (Rocky body)', type: 'polygon', data: [[90.0, 0.04], [247.0, 0.04], [247.0, 0.22], [90.0, 0.22]], showInLegend: false, marker: { enabled: false }, color: 'green', opacity: 0.5 },
-				{ name: 'Crystalline Shards (Rocky Ice world)', type: 'polygon', data: [[98.0, 0.05], [168.0, 0.05], [168.0, 0.16], [98.0, 0.16]], showInLegend: false, marker: { enabled: false }, color: 'green', opacity: 0.5 },
+				{ name: 'Violaceum Sinuous Tubers (Rocky body)', type: 'polygon', data: [[203.0, 0.04], [490.0, 0.04], [490.0, 0.49], [203.0, 0.49]], showInLegend: false, marker: { enabled: false }, color: 'purple', opacity: 0.5 },
+				{ name: 'Lindigoticum Sinuous Tubers (Rocky body)', type: 'polygon', data: [[209.0, 0.04], [490.0, 0.04], [490.0, 0.49], [209.0, 0.49]], showInLegend: false, marker: { enabled: false }, color: 'purple', opacity: 0.5 },
+				{ name: 'Blatteum Sinuous Tubers (Rocky body)', type: 'polygon', data: [[205.0, 0.04], [473.0, 0.04], [473.0, 0.49], [205.0, 0.49]], showInLegend: false, marker: { enabled: false }, color: 'purple', opacity: 0.5 },
+				{ name: 'Roseum Brain Tree (Rocky body)', type: 'polygon', data: [[200.0, 0.04], [499.0, 0.04], [499.0, 0.42], [200.0, 0.42]], showInLegend: false, marker: { enabled: false }, color: 'blue', opacity: 0.5 },
+				{ name: 'Bark Mound (Rocky body)', type: 'polygon', data: [[184.0, 0.02], [439.0, 0.02], [439.0, 0.46], [184.0, 0.46]], showInLegend: false, marker: { enabled: false }, color: 'brown', opacity: 0.5 },
+				{ name: 'Lindigoticum Sinuous Tubers (High metal content world)', type: 'polygon', data: [[219.0, 0.08], [491.0, 0.08], [491.0, 0.41], [219.0, 0.41]], showInLegend: false, marker: { enabled: false }, color: 'purple', opacity: 0.5 },
+				{ name: 'Aureum Brain Tree (Rocky body)', type: 'polygon', data: [[303.0, 0.04], [486.0, 0.04], [486.0, 0.46], [303.0, 0.46]], showInLegend: false, marker: { enabled: false }, color: 'blue', opacity: 0.5 },
+				{ name: 'Lividum Brain Tree (Rocky body)', type: 'polygon', data: [[300.0, 0.04], [496.0, 0.04], [496.0, 0.42], [300.0, 0.42]], showInLegend: false, marker: { enabled: false }, color: 'blue', opacity: 0.5 },
+				{ name: 'Roseum Sinuous Tubers (Rocky body)', type: 'polygon', data: [[200.0, 0.04], [497.0, 0.04], [497.0, 0.27], [200.0, 0.27]], showInLegend: false, marker: { enabled: false }, color: 'purple', opacity: 0.5 },
+				{ name: 'Croceum Anemone (Rocky body)', type: 'polygon', data: [[213.0, 0.04], [439.0, 0.04], [439.0, 0.31], [213.0, 0.31]], showInLegend: false, marker: { enabled: false }, color: 'orange', opacity: 0.5 },
 				{ name: 'Crystalline Shards (High metal content world)', type: 'polygon', data: [[191.0, 0.07], [230.0, 0.07], [230.0, 1.37], [191.0, 1.37]], showInLegend: false, marker: { enabled: false }, color: 'green', opacity: 0.5 },
+				{ name: 'Prasinum Sinuous Tubers (Rocky body)', type: 'polygon', data: [[208.0, 0.04], [488.0, 0.04], [488.0, 0.22], [208.0, 0.22]], showInLegend: false, marker: { enabled: false }, color: 'purple', opacity: 0.5 },
+				{ name: 'Viride Brain Tree (Rocky Ice world)', type: 'polygon', data: [[100.0, 0.04], [242.0, 0.04], [242.0, 0.39], [100.0, 0.39]], showInLegend: false, marker: { enabled: false }, color: 'blue', opacity: 0.5 },
+				{ name: 'Roseum Anemone (Rocky body)', type: 'polygon', data: [[274.0, 0.05], [433.0, 0.05], [433.0, 0.32], [274.0, 0.32]], showInLegend: false, marker: { enabled: false }, color: 'orange', opacity: 0.5 },
+				{ name: 'Albidum Sinuous Tubers (Rocky body)', type: 'polygon', data: [[206.0, 0.04], [424.0, 0.04], [424.0, 0.22], [206.0, 0.22]], showInLegend: false, marker: { enabled: false }, color: 'purple', opacity: 0.5 },
+				{ name: 'Gypseeum Brain Tree (Rocky body)', type: 'polygon', data: [[200.0, 0.04], [329.0, 0.04], [329.0, 0.29], [200.0, 0.29]], showInLegend: false, marker: { enabled: false }, color: 'blue', opacity: 0.5 },
+				{ name: 'Crystalline Shards (Rocky body)', type: 'polygon', data: [[90.0, 0.04], [247.0, 0.04], [247.0, 0.22], [90.0, 0.22]], showInLegend: false, marker: { enabled: false }, color: 'green', opacity: 0.5 },
+				{ name: 'Crystalline Shards (Icy body)', type: 'polygon', data: [[27.0, 0.02], [133.0, 0.02], [133.0, 0.19], [27.0, 0.19]], showInLegend: false, marker: { enabled: false }, color: 'green', opacity: 0.5 },
+				{ name: 'Roseum Brain Tree (Icy body)', type: 'polygon', data: [[200.0, 0.03], [247.0, 0.03], [247.0, 0.26], [200.0, 0.26]], showInLegend: false, marker: { enabled: false }, color: 'blue', opacity: 0.5 },
+				{ name: 'Lindigoticum Brain Tree (Rocky body)', type: 'polygon', data: [[370.0, 0.05], [499.0, 0.05], [499.0, 0.13], [370.0, 0.13]], showInLegend: false, marker: { enabled: false }, color: 'blue', opacity: 0.5 },
+				{ name: 'Crystalline Shards (Rocky Ice world)', type: 'polygon', data: [[98.0, 0.05], [168.0, 0.05], [168.0, 0.16], [98.0, 0.16]], showInLegend: false, marker: { enabled: false }, color: 'green', opacity: 0.5 },
+				{ name: 'Roseum Brain Tree (Rocky Ice world)', type: 'polygon', data: [[200.0, 0.08], [242.0, 0.08], [242.0, 0.26], [200.0, 0.26]], showInLegend: false, marker: { enabled: false }, color: 'blue', opacity: 0.5 },
+				{ name: 'Viride Sinuous Tubers (Rocky body)', type: 'polygon', data: [[327.0, 0.08], [429.0, 0.08], [429.0, 0.14], [327.0, 0.14]], showInLegend: false, marker: { enabled: false }, color: 'purple', opacity: 0.5 },
+				{ name: 'Bark Mound (Metal-rich body)', type: 'polygon', data: [[1712.0, 3.17], [1712.0, 3.17], [1712.0, 3.18], [1712.0, 3.18]], showInLegend: false, marker: { enabled: false }, color: 'brown', opacity: 0.5 },
 
 				/*"ming": 0.04940613159, "maxg": 2.884510296, "mint": 1000, "maxt": 1672,*/
 
 				{
-					name: 'Planet A 1 - High Metal Content',
+					name: 'Planet A 3 - High Metal Content World',
 					//color: 'rgba(223, 83, 83, .5)',
 					color: 'black',
 					marker: {
 						symbol: 'circle'
 					},
-					data: [[50, 0]]
+					data: [[443, 0.24636591414388323]]
 
 				}, {
-					name: 'Planet A 2 - (Rocky Body)',
+					name: 'Planet A 4 - (High Metal Content World)',
 					//color: 'rgba(119, 152, 191, .5)',
 					color: 'black',
 					marker: {
 						symbol: 'circle'
 					},
-					data: [[2000, 4]]
+					data: [[389, 0.23299582650156864]]
+				}, {
+					name: 'Planet A 5 - (High Metal Content World)',
+					//color: 'rgba(119, 152, 191, .5)',
+					color: 'black',
+					marker: {
+						symbol: 'circle'
+					},
+					data: [[358, 0.31207592241713866]]
+				}, {
+					name: 'Planet A 5 a - (Rocky Body)',
+					//color: 'rgba(119, 152, 191, .5)',
+					color: 'black',
+					marker: {
+						symbol: 'circle'
+					},
+					data: [[358, 0.08890651287762316]]
+				}, {
+					name: 'Planet A 6 - (High Metal Content World)',
+					//color: 'rgba(119, 152, 191, .5)',
+					color: 'black',
+					marker: {
+						symbol: 'circle'
+					},
+					data: [[305, 0.3646106183430607]]
+				}, {
+					name: 'Planet B 1 - (High Metal Content World)',
+					//color: 'rgba(119, 152, 191, .5)',
+					color: 'black',
+					marker: {
+						symbol: 'circle'
+					},
+					data: [[327, 0.10597900724512863]]
+				}, {
+					name: 'Planet B 2 - (High Metal Content World)',
+					//color: 'rgba(119, 152, 191, .5)',
+					color: 'black',
+					marker: {
+						symbol: 'circle'
+					},
+					data: [[307, 0.12801694660156007]]
+				}, {
+					name: 'Planet B 3 - (High Metal Content World)',
+					//color: 'rgba(119, 152, 191, .5)',
+					color: 'black',
+					marker: {
+						symbol: 'circle'
+					},
+					data: [[275, 0.11786647361973857]]
+				}, {
+					name: 'Planet B 4 - (High Metal Content World)',
+					//color: 'rgba(119, 152, 191, .5)',
+					color: 'black',
+					marker: {
+						symbol: 'circle'
+					},
+					data: [[275, 0.11196985814989319]]
+				}, {
+					name: 'Planet B 5 - (High Metal Content World)',
+					//color: 'rgba(119, 152, 191, .5)',
+					color: 'black',
+					marker: {
+						symbol: 'circle'
+					},
+					data: [[241, 0.15497391512603076]]
+				}, {
+					name: 'Planet B 5 a - (Rocky Body)',
+					//color: 'rgba(119, 152, 191, .5)',
+					color: 'black',
+					marker: {
+						symbol: 'circle'
+					},
+					data: [[241, 0.0505648382340118]]
+				}, {
+					name: 'Planet B 6 - (High Metal Content World)',
+					//color: 'rgba(119, 152, 191, .5)',
+					color: 'black',
+					marker: {
+						symbol: 'circle'
+					},
+					data: [[226, 0.10437672577365008]]
+				}, {
+					name: 'Planet C 1 - (High Metal Content World)',
+					//color: 'rgba(119, 152, 191, .5)',
+					color: 'black',
+					marker: {
+						symbol: 'circle'
+					},
+					data: [[280, 0.41084580561400247]]
+				}, {
+					name: 'Planet C 2 - (High Metal Content World)',
+					//color: 'rgba(119, 152, 191, .5)',
+					color: 'black',
+					marker: {
+						symbol: 'circle'
+					},
+					data: [[280, 0.31929239132348136]]
+				}, {
+					name: 'Planet C 3 - (High Metal Content World)',
+					//color: 'rgba(119, 152, 191, .5)',
+					color: 'black',
+					marker: {
+						symbol: 'circle'
+					},
+					data: [[247, 0.28328051830826545]]
+				}, {
+					name: 'Planet C 4 - (High Metal Content World)',
+					//color: 'rgba(119, 152, 191, .5)',
+					color: 'black',
+					marker: {
+						symbol: 'circle'
+					},
+					data: [[227, 0.3445977143163929]]
+				}, {
+					name: 'Planet C 5 - (High Metal Content World)',
+					//color: 'rgba(119, 152, 191, .5)',
+					color: 'black',
+					marker: {
+						symbol: 'circle'
+					},
+					data: [[227, 0.27700517207245046]]
 				}]
 		});
 	</script>
