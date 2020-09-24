@@ -12,6 +12,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="EliteDangerousRegionMap/RegionMap.js"></script>
 	<script src="pretty-print-json.js"></script>
 	<link href="css/pretty-print-json.css" type="text/css" rel="stylesheet" />
 	<link href="https://unpkg.com/tabulator-tables@4.3.0/dist/css/tabulator_midnight.min.css" rel="stylesheet">
@@ -192,7 +193,10 @@
 			var opacity = 0.1;
 			var primary = 'Unknown'
 			var system = edsm.name
-			var region = 18
+			var regiondata = findRegionForBoxel(edsm.id64)
+			var region = regiondata.region.id
+			var regionname = regiondata.region.name
+			console.log(region)
 
 
 			planets = []
@@ -326,7 +330,7 @@
 					text: 'Gravity Vs Temperature Ranges for Biological Signals'
 				},
 				subtitle: {
-					text: "System: " + system + " (" + primary + ")"
+					text: "System: " + system + "<br>Region: " + regionname + "<br>Primary Star: " + primary
 				},
 				xAxis: {
 					title: {
