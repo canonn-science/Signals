@@ -42,12 +42,10 @@
 
 	<!-- Signup Form -->
 	<script>
-		/**
-		 * Get the URL parameters
-		 * source: https://css-tricks.com/snippets/javascript/get-url-variables/
-		 * @param  {String} url The URL
-		 * @return {Object}     The URL parameters
-		 */
+
+		var signals = {}
+		var entries = {}
+
 		var getParams = function (url) {
 			var params = {};
 			var parser = document.createElement('a');
@@ -80,8 +78,11 @@
 
 
 
+
 		function updateSignals(json) {
 			//console.log(json);
+			window.signals = json.signals
+
 			var table = new Tabulator("#results-table", {
 				data: json.signals,           //load row data from array
 				layout: "fitColumns",      //fit columns to width of table
@@ -102,8 +103,8 @@
 			});
 		}
 		function updateEntries(json) {
-			//console.log(json);
-			//console.log(json);
+			window.entries = json.signals
+
 			var table = new Tabulator("#entries-table", {
 				data: json.signals,           //load row data from array
 				layout: "fitColumns",      //fit columns to width of table
@@ -285,6 +286,37 @@
 
 				var biolist = []
 
+				function get_signals(body) {
+					retval = ''
+					window.signals.forEach(function (signal) {
+						console.log('Signals ' + signal.body + '  ' + body)
+						if (signal.body.trim() == body.trim() & signal.type == 'Biology') {
+							console.log('Found Signals ' + signal.body + '  ' + body)
+							retval = '<br>' + signal.count + ' Biological Signals Found'
+						}
+					});
+					return retval
+				}
+
+				function get_entries(body) {
+					bodyentries = {}
+					window.entries.forEach(function (entry) {
+
+						if (entry.body.trim() == body.trim() & entry.hud_category == 'Biology') {
+							bodyentries[entry.name] = entry.english_name
+						}
+					});
+					var retval = "<br>"
+					for (var key in bodyentries) {
+						// check if the property/key is defined in the object itself, not in parent
+						if (bodyentries.hasOwnProperty(key)) {
+							console.log(bodyentries[key]);
+							retval = retval + bodyentries[key] + '<br>'
+						}
+					}
+					return retval
+				}
+
 				function match_conditions(region, primary, planet, codex) {
 					temp = planet.data[0][0];
 					gravity = planet.data[0][1]
@@ -331,7 +363,7 @@
 						text: 'Gravity Vs Temperature Ranges for Biological Signals'
 					},
 					subtitle: {
-						text: "System: " + system + "<br>Region: " + regionname + "<br>Primary Star: " + primary
+						text: "<b>System:</b> " + system + " <b>Region:</b> " + regionname + " <b>Primary Star:</b> " + primary
 					},
 					xAxis: {
 						title: {
@@ -360,8 +392,11 @@
 									this.series.options.data[2][1] +
 									' (G)'
 							} else {
+								planet = this.series.name.split("-", 1)[0].replace("Planet ", "").trim()
+								console.log(planet)
 
-								return '<b>' + this.series.name + '</b><br>Temperature: ' + this.point.x + ' (K)<br>Gravity: ' + this.point.y + ' (G)'
+								return '<b>' + this.series.name + '</b><br>Temperature: ' + this.point.x + ' (K)<br>Gravity: ' + this.point.y + ' (G)' + get_entries(planet) + get_signals(planet)
+
 							}
 
 							//return this.series.name + '<br>Oh come on' + this.series.options.data[0][0]
