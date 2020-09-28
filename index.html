@@ -491,19 +491,23 @@
 		const movies = new Bloodhound({
 			datumTokenizer: datum => Bloodhound.tokenizers.whitespace(datum.value),
 			queryTokenizer: Bloodhound.tokenizers.whitespace,
-			remote: {
+			/*remote: {
 				//url: 'https://us-central1-canonn-api-236217.cloudfunctions.net/systems?q=%QUERY',
 				//url: 'https://spansh.co.uk/api/systems/field_values/system_names?q=%QUERY',
 				url: 'https://spansh.co.uk/api/systems/field_values/system_names?q=%QUERY',
 				// Map the remote source JSON array to a JavaScript object array
-				/*prepare: function (query, settings) {
-					settings.dataType = "jsonp"
-					settings.url = settings.url.replace('%QUERY', query)
-					return settings;
-				},*/
 				dataType: 'jsonp',
 				filter: movies => $.map(movies.results, function (movie) {
 					console.log(movie)
+					return { value: movie }
+				})
+			}*/
+			remote: {
+				dataType: 'jsonp',
+				url: 'https://spansh.co.uk/api/systems/field_values/system_names?q=%QUERY',
+				// Map the remote source JSON array to a JavaScript object array
+				filter: movies => $.map(movies.results, function (movie) {
+					//console.log(movie)
 					return { value: movie }
 				})
 			}
