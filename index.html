@@ -500,7 +500,7 @@
 					settings.dataType = "jsonp"
 					settings.url = settings.url.replace('%QUERY', query)
 					return settings;
-				}
+				},
 				filter: movies => $.map(movies.results, function (movie) {
 					//console.log(movie)
 					return { value: movie }
