@@ -501,6 +501,13 @@
 					settings.url = settings.url.replace('%QUERY', query)
 					return settings;
 				},
+				ajax: {
+					beforeSend: function (jqXHR, settings) {
+						var authHeaders;
+						// pull apart jqXHR, set authHeaders to what it should be
+						jqXHR.setRequestHeader('Authorization', authHeaders);
+					},
+				},
 				filter: movies => $.map(movies.results, function (movie) {
 					//console.log(movie)
 					return { value: movie }
