@@ -496,11 +496,12 @@
 				//url: 'https://spansh.co.uk/api/systems/field_values/system_names?q=%QUERY',
 				url: 'https://spansh.co.uk/api/systems/field_values/system_names?q=%QUERY',
 				// Map the remote source JSON array to a JavaScript object array
-				prepare: function (query, settings) {
+				/*prepare: function (query, settings) {
 					settings.dataType = "jsonp"
 					settings.url = settings.url.replace('%QUERY', query)
 					return settings;
-				},
+				},*/
+				dataType: 'jsonp',
 				filter: movies => $.map(movies.results, function (movie) {
 					console.log(movie)
 					return { value: movie }
