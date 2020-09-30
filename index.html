@@ -83,6 +83,7 @@
 			//console.log(json);
 			window.signals = json.signals
 
+
 			var table = new Tabulator("#results-table", {
 				data: json.signals,           //load row data from array
 				layout: "fitColumns",      //fit columns to width of table
@@ -131,6 +132,11 @@
 			getSignalEntries(system)
 			getSignals(system)
 			getBodies(system)
+			$("#edsm").html('<div id="result"><p>Result: ' + system + ' ' + system + '</p><blockquote class="edsm-embed" lang="en" data-value="' + system + '"><a href="https://www.edsm.net/" target="_blank">EDSM - Elite Dangerous Star Map</a></blockquote></div>');
+			var script = document.createElement("script");
+			script.type = "text/javascript";
+			script.src = "https://www.edsm.net/js/embed.js";
+			document.getElementsByTagName("head")[0].appendChild(script);
 		}
 
 		function getSignalEntries(system) {
@@ -469,6 +475,8 @@
 				</p>
 			</figure>
 			<p>
+			<div id="edsm"></div>
+			<p></p>
 			<div id="results-table" style="overflow: visible">&nbsp;</div>
 			</p>
 			<p>
