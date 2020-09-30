@@ -132,7 +132,7 @@
 			getSignalEntries(system)
 			getSignals(system)
 			getBodies(system)
-			$("#edsm").html('<div id="result"><p>Result: ' + system + ' ' + system + '</p><blockquote class="edsm-embed" lang="en" data-value="' + system + '"><a href="https://www.edsm.net/" target="_blank">EDSM - Elite Dangerous Star Map</a></blockquote></div>');
+			$("#edsm").html('<div id="result"><blockquote class="edsm-embed" lang="en" data-value="' + system + '"><a href="https://www.edsm.net/" target="_blank">EDSM - Elite Dangerous Star Map</a></blockquote></div>');
 			var script = document.createElement("script");
 			script.type = "text/javascript";
 			script.src = "https://www.edsm.net/js/embed.js";
@@ -176,7 +176,9 @@
 			</div>
 			<input type="submit">
 		</form>
-
+		<p>
+		<div id="edsm"></div>
+		<p></p>
 		</p>
 
 		<script>
@@ -474,9 +476,7 @@
 				<p class="highcharts-description">
 				</p>
 			</figure>
-			<p>
-			<div id="edsm"></div>
-			<p></p>
+
 			<div id="results-table" style="overflow: visible">&nbsp;</div>
 			</p>
 			<p>
